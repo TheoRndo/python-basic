@@ -748,6 +748,164 @@ else:
 print(tour)
 
 
+lettre=input()
+nbLignes=int(input())
+compte = 0
+for loop in range(nbLignes):
+    phrase=input()
+    for l in range(len(phrase)):
+        if phrase[l] == lettre:
+            compte = compte +1
+print(compte)
+
+
+ligne=input()
+caracteres=list(ligne)
+for loop in range(len(ligne)):
+    if caracteres[loop] == " ":
+        caracteres[loop] = "_"
+ligne = "".join(caracteres)
+print(ligne)
+
+
+
+def demande():
+    code = 0
+    while code != 4242:
+        print("Entrez le code :")
+        code=int(input())
+
+demande()
+print("Encore une fois.")
+code = 0
+demande()
+print("Bravo.")
+
+
+def demande(boncode):
+    code = 0
+    while code != boncode:
+        print("Entrez le code :")
+        code=int(input())
+
+demande(4242)
+print("Premier code bon.")
+demande(2121)
+print("Bravo.")
+
+
+def ligneCaracteres(caractère, longueur):
+   for iCol in range(longueur):
+      print(caractère, end = "")
+   print()
+
+longueur=int(input())
+ligneCaracteres("X", longueur)
+ligneCaracteres("#", longueur)
+ligneCaracteres("i", longueur)
+
+
+def feuille(nbLignes, nbColonnes, motif):
+    for loop in range(nbLignes):
+        for loop in range(nbColonnes):
+            print(motif, end="")
+        print()
+
+nbLignes=int(input())
+nbColonnes=int(input())
+motif=input()
+feuille(nbLignes, nbColonnes, motif)
+
+
+def min2(entier1, entier2):
+    if entier1 < entier2:
+        return entier1
+    return entier2
+
+minimum=int(input())
+for loop in range(9):
+    minimum = min2(minimum, int(input()))
+print(minimum)
+
+
+#RIP LE CRASH JAI TOUT PERDU APRES CE POINT...
+#BAH GO TOUT RECOMMENCER :(
+
+def ligne(nbX):
+    print("X"*nbX, end="")
+
+def rectangle(nbLignes,nbColonnes):
+    if nbLignes > 2 and nbColonnes > 1:
+        print("#"*nbColonnes, end="")
+        print()
+        for loop in range(nbLignes-2):
+            print("#",(nbColonnes-4)*" ","#")
+        print("#"*nbColonnes, end="")
+    else:
+        for loop in range(nbLignes):
+            print("#"*nbColonnes)
+
+def triangle(nbLignes2):
+    if nbLignes2 > 2:
+        print("@")
+        for loop in range(nbLignes2-2):
+            print("@", end="")
+            print(loop*" ", end="")
+            print("@")
+        print("@"*(nbLignes2))
+    else:
+        for loop in range(nbLignes2):
+            print("@"*(loop+1))
+
+ok1=int(input())
+ok2=int(input())
+ok3=int(input())
+ok4=int(input())
+print()
+ligne = ligne(ok1)
+print()
+print()
+rectangle = rectangle(ok2,ok3)
+print()
+print()
+triangle = triangle(ok4)
+
+
+def conversionpieds(metre):
+    conversion = metre*(1/0.3048)
+    return conversion
+
+def conversionlivres(gramme):
+    conversion = gramme*(0.002205)
+    return conversion
+
+def conversionfahrenheit(celcius):
+    conversion = 32+1.8*celcius
+    return conversion
+
+from math import *
+nbConversions=int(input())
+for loop in range(nbConversions):
+    valeur=input()
+    if "m" in valeur:
+        valeur = valeur.split(" ")
+        valeur = float(valeur[0])
+        conversionpieds(valeur)
+        print(round(conversionpieds(valeur),6), "p")
+    elif "g" in valeur:
+        valeur = valeur.split(" ")
+        valeur = float(valeur[0])
+        conversionlivres(valeur)
+        print(round(conversionlivres(valeur),6), "l")
+    elif "c" in valeur:
+        valeur = valeur.split(" ")
+        valeur = float(valeur[0])
+        conversionfahrenheit(valeur)
+        print(round(conversionfahrenheit(valeur),6), "f")
+
+
+#FIN DES NIVEAUX 1 ET 2
+
 
 
 
